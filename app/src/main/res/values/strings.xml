@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">dogs-app</string>
+    <string name="home_title">Dogs We Love</string>
+    <string name="dog_item_age">Almost %d years</string>
+</resources>
