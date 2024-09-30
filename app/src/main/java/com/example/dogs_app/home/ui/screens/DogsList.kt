@@ -17,11 +17,12 @@ import com.example.dogs_app.home.ui.components.DogItem
 @Composable
 fun DogList(
     dogs: List<Dog>,
+    paddingValues: PaddingValues,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(32.dp),
-        contentPadding = PaddingValues(vertical = 24.dp),
+        contentPadding = paddingValues,
         state = rememberLazyListState(),
         modifier = modifier
             .fillMaxWidth()
