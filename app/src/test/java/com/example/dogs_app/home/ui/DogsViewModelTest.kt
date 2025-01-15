@@ -44,7 +44,7 @@ class DogsViewModelTest {
     @Test
     fun `dogsViewModel fetchDogs returnData`() = runTest {
         dogsViewModel.fetchDogs()
-        assertEquals("Coki", dogsViewModel.uiState.value.dogs[0].dogName)
+        assertEquals("Coki y sanzon", dogsViewModel.uiState.value.dogs[0].dogName)
     }
 
     @Test
