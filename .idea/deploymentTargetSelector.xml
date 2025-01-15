@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-09-27T20:57:25.314654300Z">
+        <DropdownSelection timestamp="2025-01-14T21:49:22.971649100Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\JoseCarlos\.android\avd\Pixel_2_API_35.avd" />
@@ -15,8 +15,16 @@
       </SelectionState>
       <SelectionState runConfigName="localDataSourceSaveAndGetDogsReturnData()">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-10-20T06:09:21.061367400Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\JoseCarlos\.android\avd\Pixel_2_API_35.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="DogLocalDataSourceImplTest">
+      <SelectionState runConfigName="localDataSourceDeleteAndGetDogsReturnEmpty()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

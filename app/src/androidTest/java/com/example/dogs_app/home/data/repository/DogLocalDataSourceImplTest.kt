@@ -20,8 +20,18 @@ import org.junit.runner.RunWith
 @MediumTest
 class DogLocalDataSourceImplTest {
 
-    private val firstDog = DogEntity("1", "Coki", "He is very playful and eater but very friendly with everyone.", 8, "https://dogs.com/coki/image")
-    private val secondDog = DogEntity("2", "Sanzon", "He is very shy and gets afraid of everything. He is playful.", 8, "https://dogs.com/coki/image")
+    private val firstDog = DogEntity(
+        "1",
+        "Coki",
+        "He is very playful and eater but very friendly with everyone.",
+        8,
+        "https://dogs.com/coki/image")
+    private val secondDog = DogEntity(
+        "2",
+        "Sanzon",
+        "He is very shy and gets afraid of everything. He is playful.",
+        8,
+        "https://dogs.com/coki/image")
 
     private lateinit var localDataSource: DogLocalDataSourceImpl
     private lateinit var database: DogsDatabase
@@ -38,15 +48,18 @@ class DogLocalDataSourceImplTest {
         localDataSource = DogLocalDataSourceImpl(database.dogDao())
     }
 
+    @Before
+    fun seedDatabase() = runBlocking {
+        localDataSource.insertAll(listOf(firstDog, secondDog))
+    }
+
     @After
     fun cleanUp() = database.close()
 
     @Test
     fun localDataSourceSaveAndGetDogsReturnData() = runBlocking {
-        val dogs = listOf(firstDog, secondDog)
-        localDataSource.insertAll(dogs)
         val savedDogs = localDataSource.fetchDogs()
-        MatcherAssert.assertThat(savedDogs, IsEqual(dogs))
+        MatcherAssert.assertThat(savedDogs, IsEqual(listOf(firstDog, secondDog)))
     }
 
     @Test

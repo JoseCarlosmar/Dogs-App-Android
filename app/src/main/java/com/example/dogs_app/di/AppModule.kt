@@ -34,11 +34,8 @@ object AppModule {
         .baseUrl(endpoint)
         .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
         .client(
-            OkHttpClient.Builder().addInterceptor(
-                HttpLoggingInterceptor().setLevel(
-                    HttpLoggingInterceptor.Level.BODY
-                )
-            ).build()
+            OkHttpClient.Builder()
+                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)).build()
         )
         .build()
 
